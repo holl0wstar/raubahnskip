@@ -17,6 +17,10 @@ TOGGLE_HOTKEY := "F6"
 
 ; Some of this mumbo jumbo made by Sky, but most of the gruntwork done by Talim.
 ; ==========================
+Counter := 0
+; ==========================
+; Counter stuff
+
 
 setupScript:
     Gui +LastFound +AlwaysOnTop +ToolWindow -Caption
@@ -25,6 +29,7 @@ setupScript:
     Gui, Add, Text, vtxtRunning cLime w600
     Gui, Add, Text, vtxtStatus cLime w600
     Gui, Add, Text, vtxtBusy cLime w600
+    Gui, Add, Text, vtxtCounter cLime w600
     WinSet, TransColor, 000000 150
     Gui, Show, x1300 y500 NoActivate
     GuiControl,, txtRunning, Starting up
@@ -49,7 +54,10 @@ timerLoop:
         Return
     }
     else
+    {
         GuiControl,, txtRunning, Script active.  Press %TOGGLE_HOTKEY% to stop.
+	    GuiControl,, txtCounter, Amount of times this script has run: %Counter%.
+    }
 
     doQuestStep()
 
@@ -91,12 +99,13 @@ doQuestStep()
         	GuiControl,, txtBusy, Skipping cutscene.
 			ControlSend, , {Numpad0}, FINAL FANTASY XIV
         	Sleep 500
-        	ControlSend, , {{Numpad0}}, FINAL FANTASY XIV
+        	ControlSend, , {Numpad0}, FINAL FANTASY XIV
+		    Sleep 100
+		    Counter:= global Counter+1
     	}
     	else
-    	{
-			ControlSend, , {Escape}, FINAL FANTASY XIV
-    	}
+		ControlSend, , {Escape}, FINAL FANTASY XIV
+
     	Return
 	}
 
@@ -125,7 +134,7 @@ doQuestStep()
     ControlSend, , {Numpad0}, FINAL FANTASY XIV
 }
 
-F5::
+F8::
 	MsgBox, Reloading script
 	Reload
 return
