@@ -70,14 +70,14 @@ doQuestStep()
     WinGetPos gamePosX, gamePosY, gameWidth, gameHeight, ahk_class FFXIVGAME
 
     ;Duty dialog search rect
-    dutyPosX1 := (gamePosX + (gameWidth / 2)) - 200
-    dutyPosX2 := (gamePosX + (gameWidth / 2)) + 200
-    dutyPosY1 := (gamePosY + (gameHeight / 2)) - 200
-    dutyPosY2 := (gamePosY + (gameHeight / 2)) + 200
-    ;dutyPosX1 := 1500
-    ;dutyPosX2 := 1700
-    ;dutyPosY1 := 600
-    ;dutyPosY2 := 700
+    ;dutyPosX1 := (gamePosX + (gameWidth / 2)) - 200
+    ;dutyPosX2 := (gamePosX + (gameWidth / 2)) + 200
+    ;dutyPosY1 := (gamePosY + (gameHeight / 2)) - 200
+    ;dutyPosY2 := (gamePosY + (gameHeight / 2)) + 200
+    dutyPosX1 := 1500
+    dutyPosX2 := 1700
+    dutyPosY1 := 600
+    dutyPosY2 := 700
 
     ;Skip cutscene dialog search rect
     skipPosX1 := (gamePosX + (gameWidth / 2)) - 200
