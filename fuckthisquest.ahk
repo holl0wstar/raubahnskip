@@ -93,7 +93,7 @@ doQuestStep()
 	{
 	    GuiControl,, txtBusy, In cutscene.
     	CoordMode, Pixel, Screen
-    	ImageSearch, posX, posY, skipPosX1, skipPosY1, skipPosX2, skipPosY2, *75 skip.png
+    	ImageSearch, posX, posY, skipPosX1, skipPosY1, skipPosX2, skipPosY2, *55 skip.png
     	if ErrorLevel = 0
     	{
         	GuiControl,, txtBusy, Skipping cutscene.
@@ -109,7 +109,7 @@ doQuestStep()
 	}
 
 	; Close system menu if we accidentally opened it
-	ImageSearch, posX, posY, skipPosX1, skipPosY1, skipPosX2, skipPosY2, *75 system.png
+	ImageSearch, posX, posY, skipPosX1, skipPosY1, skipPosX2, skipPosY2, *55 system.png
     if ErrorLevel = 0
     {
         GuiControl,, txtBusy, Closing system menu.
@@ -119,7 +119,7 @@ doQuestStep()
 
     ; Check for the duty dialog
     CoordMode, Pixel, Screen
-    ImageSearch, posX, posY, dutyPosX1, dutyPosY1, dutyPosX2, dutyPosY2, *75 duty.png
+    ImageSearch, posX, posY, dutyPosX1, dutyPosY1, dutyPosX2, dutyPosY2, *55 duty.png
     if ErrorLevel = 0
     {
         GuiControl,, txtBusy, Found duty dialog.  Commencing duty.
